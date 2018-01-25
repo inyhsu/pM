@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <h1>Edit Product</h1>
+  <div class="content">
+    <form (submit)="update()">
+      <h3>Title</h3>
+      <input type="text" name="title" [(ngModel)]="product.title" placeholder="{{product.title}}">
+      <h3>Price</h3>
+      <input type="text" name="price" [(ngModel)]="product.price" placeholder="{{product.price}}">
+      <h3>Image URL</h3>
+      <input type="text" name="image" [(ngModel)]="product.image" placeholder="{{product.image}}">
+      <br>
+      <br>
+      <button>UPDATE</button>
+      <button (click)="delete(product._id)">Delete</button>
+    </form>
+    <div *ngIf="errors">
+      <span style="color:red">{{errors.message | json}}</span>
+    </div>
+  </div>
+</div>

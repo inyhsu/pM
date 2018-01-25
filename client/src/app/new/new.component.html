@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <h1>Create a New Product</h1>
+  <div class="content">
+    <form (submit)="create()">
+      <h3>Title</h3>
+      <input type="text" name="title" [(ngModel)]="product.title">
+      <h3>Price</h3>
+      <input type="text" name="price" [(ngModel)]="product.price">
+      <h3>Image URL</h3>
+      <input type="text" name="image" [(ngModel)]="product.image">
+      <br>
+      <br>
+      <button>Submit</button>
+    </form>
+    <div *ngIf="errors"><span style="color:red">{{errors.message | json}}</span></div>
+  </div>
+</div>
